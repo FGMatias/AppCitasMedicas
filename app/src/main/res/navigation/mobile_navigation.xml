@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_appointment">
+
+    <fragment
+        android:id="@+id/nav_appointment"
+        android:name="com.example.clinic.ui.appointment.AppointmentFragment"
+        android:label="@string/menu_appointment"
+        tools:layout="@layout/fragment_appointment" >
+        <action
+            android:id="@+id/action_nav_appointment_to_nav_appointment_schedule"
+            app:destination="@id/nav_appointment_schedule" />
+        <action
+            android:id="@+id/action_nav_appointment_self"
+            app:destination="@id/nav_appointment" />
+        <action
+            android:id="@+id/action_nav_appointment_to_nav_appointment_edit"
+            app:destination="@id/nav_appointment_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_appointment_schedule"
+        android:name="com.example.clinic.ui.appointment.AppointmentAdd"
+        android:label="@string/menu_appointment_schedule"
+        tools:layout="@layout/fragment_appointment_schedule" />
+
+    <fragment
+        android:id="@+id/nav_appointment_edit"
+        android:name="com.example.clinic.ui.appointment.AppointmentEdit"
+        android:label="@string/menu_appointment_edit"
+        tools:layout="@layout/fragment_appointment_edit" >
+        <action
+            android:id="@+id/action_nav_appointment_edit_to_nav_appointment"
+            app:destination="@id/nav_appointment" />
+    </fragment>
+</navigation>
